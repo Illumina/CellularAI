@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CellularAI"
+version = "0.1.0"
+description = "Predicting single-cell responses to genetic perturbations"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+  {name = "Aniketh Janardhan Reddy", email = "areddy1@illumina.com"},
+  {name = "Atreyo Pal", email = "apal2@illumina.com"},
+  {name = "Eyal Ben-David", email = "ebendavid@illumina.com"},
+  {name = "Kishore Jaganathan", email = "kjaganathan@illumina.com"},
+  {name = "Kyle Kai-How Farh", email = "kfarh@illumina.com"},
+]
+dependencies = ["numpy", "pandas>=2.2", "h5py", "pyyaml", "scipy", "pyarrow", "anndata", "numba"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["build", "ruff", "pytest"]
+
+[project.scripts]
+cellularai = "cellularai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

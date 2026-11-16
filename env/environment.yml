@@ -1,0 +1,14 @@
+name: cellularai
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - numpy>=2
+  - pandas>=2.2
+  - scipy
+  - h5py
+  - pyarrow
+  - numba
+  - pyyaml
+  - anndata
+  - pytest
+  - pip

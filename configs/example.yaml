@@ -1,0 +1,176 @@
+# Copy this file to a writable run directory and update training_data.catalog.
+# Paths containing no leading slash are resolved relative to this configuration file.
+# The model values define the released method and normally should not be edited.
+training_data:
+  catalog: customer_bundle/catalog.json
+compute:
+  backend: local
+  # tmp: /short/writable/path  # optional; defaults to OUTPUT/tmp
+  workers: 8
+model:
+  pooling:
+    l2_row: inv:mad:dl
+    l2_col: sef*kd
+    l2_mat: auxiliary*sim*pair
+    z_row: nr
+    z_col: sef*kd
+    z_mat: auxiliary*sim*pair
+    noise: 1.0
+    se: 1.0
+    se_clip: 4.0
+    kd_ref: 0.6
+    kd_floor: 0.0
+    sim: 0.25
+    sim_hvg: 2000
+    correction: LZ
+    fill: zf
+    one_stream: true
+    views:
+    - view_0
+    - view_1
+    auxiliary_weight: 2
+    pair_weight: 0.5
+  calls:
+    eligible_cpm: 5.0
+    min_lfc: 0.02
+    gamma: 2.5
+    n_min: 5
+    n_max: 6000
+    w_pow: 1.0
+    phi: 0.1
+    strength_z: 3.0
+    strength_k: 111.2
+    strength_c: 4.0
+    strength_phi: 0.05
+  plan:
+    curve_slope: 3.0
+    sim_tau: 1.0
+    sim_ntop: 3000
+    sim_cap: 0.3
+    plan_z_uniform: 0.5
+    xsim_tau: 0.5
+    xsim_strength: 0.5
+    xsim_cap_factor: 2.0
+    xsim_max_total: 1.2
+    power_k: 111.0
+    power_c: 3.0
+    power_phi: 0.05
+    power_depth: 20000.0
+    power_z_n2: 2.0
+    power_t_pen: 0.5
+    power_soft_z: 2.0
+    shrink_quantile: 0.2
+    shrink_factor: 0.1
+  totals:
+    credit_draws: 64
+    credit_seed: 7
+    amp_share: 0.9
+    shape_gamma: 0.8
+    shape_kz: 16.0
+    mix: 0.5
+    gate_z: 5.0
+    pcs_cells: 6000
+    pcs_seed: 0
+    cp_j0: 10
+    cp_k: 50
+    cp_lam: 1.0
+    cp_top: 0.33
+    pw_gamma: 0.25
+    pw_k: 100
+    pw_lam: 1.0
+    pw_top: 0.25
+    residual_rank: 160
+    residual_ridge: 10.0
+    residual_min_measured: 32
+    residual_alpha: 0.25
+    residual_perts: 1024
+    residual_scale_floor: 0.1
+    residual_global: 5
+    residual_proj_ridge: 0.1
+    residual_clip: 3.0
+    fixed_steps: 3
+    fixed_rtol: 0.001
+  placement:
+    rule:
+      amp: 0.6
+      h0: 0.25
+      kz: 16.0
+      phi: 0.2
+      cap: 1.2
+      cl2: 2.2
+    frozen:
+      amp: 0.4
+      h0: 0.25
+      kz: 16.0
+      phi: 0.2
+      cap: 0.8
+      cl2: 1.5
+    evidence_z: 1.0
+    rule_band:
+    - 1.0
+    - 5.0
+    boost_band:
+    - 1.0
+    - 2.0
+    boost: 1.88
+    damp_band:
+    - 3.0
+    - 5.0
+    damp: 0.9
+    plan_floor_z: 3.0
+    order_az: 0.6
+    order_zsim: 3.0
+    order_clip:
+    - -6
+    - 12
+    lib_spread: 0.85
+  synthesis:
+    z_plan:
+    - 5.5
+    - 9.0
+    z_nudge: 2.0
+    rmax: 0.99
+    n_bis: 5
+    ztol: 1.0
+    ztol_plan: 0.2
+    ltol: 0.01
+    ne_burst: 4
+    planned_z: 5.0
+    overshoot_z: 0.4
+    repair_r:
+    - 0.25
+    - 0.5
+    solve_ntop: 40
+    solve_tol: 0.05
+    solve_iters: 40
+    shift_band:
+    - -0.6
+    - 1.6
+    sparsify_step: 0.025
+  guards:
+    l2_abs_max: 6.25
+    z_abs_max: 187.5
+    v_floor_rel: 0.0024
+    sim_sd_min: 0.04
+    sim_z_clip: 8.125
+    nr_clip: 320.0
+    log2_max: 12.5
+    mt_ls_clip: 7.5
+    order_sd_min: 0.028
+    sim_share_max:
+      plan: 0.24
+      sim: 0.45
+      xsim: 0.45
+      pooling: 0.12
+    sim_neff_min:
+      plan: 16.0
+      sim: 5.9
+      xsim: 3.4
+      pooling: 30.0
+    max_unmeasured: 0
+    max_missing_readout_frac: 0.005
+    credit_kink: 1.001
+    credit_band_lo: 0.975
+    max_hit_rate:
+      nr_clip: 2.0e-05
+      log2_max: 0.0075
