@@ -1,0 +1,19 @@
+# Evaluation configuration for the public vcc2025 harness.
+# Download and unpack the bundle first (see docs/evaluation.md); `root` is resolved
+# from the current working directory, so run from the directory containing evaluation/
+# or replace it with an absolute path.
+datasets:
+  vcc2025:
+    root: evaluation/vcc2025
+    files:
+      controls: controls_pooled.npz
+      perturbations: perturbation_list.json
+      provision: anchors/control_provision.npy
+      anchor_scores: anchors/anchor_scores.json
+      reference_side: anchors/reference_side.npz
+    md5:
+      controls: 9eacfcfba6f4788ad4f646d5d348f911
+      perturbations: 2bfaf5acb39da9c7e9346e0fafee68f0
+      provision: e85264cd64a8de589fe1c7a7dd3bb719
+      anchor_scores: a5005b610a35231b15f384070a50c243
+      reference_side: f8478d501fa210472f4ce6b072b954f9

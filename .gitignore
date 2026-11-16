@@ -1,0 +1,112 @@
+# Python bytecode and caches
+__pycache__/
+**/.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+envs/
+.conda/
+
+# Local/private configuration (keep the public example trackable)
+*.local.yaml
+*.local.yml
+*.private.yaml
+*.private.yml
+config.local.yaml
+config.local.yml
+secrets.*
+!configs/example.yaml
+
+# Local private inputs, bundles, generated data, and run outputs
+private/
+data/
+datasets/
+customer_bundle/
+bundles/
+runs/
+output/
+outputs/
+builds/
+synthetic-output/
+synthetic_output/
+examples/synthetic/output/
+examples/synthetic/generated/
+
+# Scientific data and generated prediction artifacts
+*.h5ad
+*.vcc
+*.npz
+*.npy
+*.parquet
+
+# Logs and scheduler output
+*.log
+slurm-*.out
+jobs/
+
+# Office, PDF, synchronization, and scanner artifacts
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+.~lock.*#
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+*.scandata
+*.scan
+
+# Public documentation, examples, and tests remain trackable
+!README.md
+!LICENSE
+!NOTICE
+!docs/
+!docs/*.md
+!configs/
+!configs/example.yaml
+!configs/evaluation.yaml
+!examples/
+!examples/synthetic/
+!examples/synthetic/*.py
+!tests/
+!tests/**
+
+# Re-ignore caches inside re-included directories
+__pycache__/
+*.py[cod]

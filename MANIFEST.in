@@ -1,0 +1,10 @@
+include LICENSE
+include NOTICE
+include README.md
+include configs/example.yaml
+include configs/evaluation.yaml
+recursive-include docs *.md *.svg
+recursive-include env *.yml
+recursive-include examples *.py
+recursive-include tests *.py
+global-exclude *.py[cod] *.ipynb_checkpoints/*

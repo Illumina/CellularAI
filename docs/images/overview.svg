@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 448" width="960" height="448" role="img" aria-labelledby="t d">
+<title id="t">CellularAI pipeline overview</title>
+<desc id="d">A training summary bundle and a prediction task feed a per-context pipeline: pool effects, plan responses, residual model, design counts, generate cells. Quality gates then check each build before outputs are merged into prediction.h5ad.</desc>
+<style>
+@media (prefers-color-scheme: dark) {
+  .bg{fill:#0d1117} .txt{fill:#e6edf3} .mut{fill:#9198a1}
+  .inp{fill:#161b22;stroke:#3d444d} .panel{stroke:#3d444d} .plab{fill:#9198a1}
+  .stg{fill:#121d33;stroke:#3a63b0} .badge{fill:#4f8ff7} .arw{stroke:#768390} .head{fill:#768390}
+  .gate{fill:#0f2418;stroke:#2f7d45} .gtl{fill:#56d364}
+  .out{fill:#2b1d0a;stroke:#b8741a} .otl{fill:#f0b45a}
+}
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker></defs>
+<rect class="bg" x="0" y="0" width="960" height="448" rx="14" fill="#ffffff"/>
+<rect class="inp" x="150" y="22" width="300" height="70" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text class="txt" x="300" y="51" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1f2328" text-anchor="middle">Training summary bundle</text>
+<text class="mut" x="300" y="73" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="middle">Billion Cell Atlas effect &amp; significance summaries</text>
+<rect class="inp" x="510" y="22" width="300" height="70" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+<text class="txt" x="660" y="51" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1f2328" text-anchor="middle">Prediction task</text>
+<text class="mut" x="660" y="73" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="middle">Readout genes · perturbations · context controls</text>
+<path class="arw" d="M300,92 L300,116" stroke="#8c959f" stroke-width="1.8" fill="none"/>
+<path class="arw" d="M660,92 L660,116" stroke="#8c959f" stroke-width="1.8" fill="none"/>
+<path class="arw" d="M300,116 L660,116" stroke="#8c959f" stroke-width="1.8" fill="none"/>
+<path class="arw" d="M480,116 L480,148" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="panel" x="20" y="150" width="920" height="166" rx="12" fill="none" stroke="#c8d1dc" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text class="plab" x="40" y="176" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6e7781" text-anchor="start">FOR EACH CONTEXT</text>
+<rect class="stg" x="40" y="192" width="156" height="104" rx="10" fill="#eef4ff" stroke="#9cb8f0" stroke-width="1.2"/>
+<circle class="badge" cx="64" cy="218" r="12" fill="#2f6fdf"/>
+<text class="" x="64" y="222.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text class="txt" x="84" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="start">Pool effects</text>
+<text class="mut" x="56" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Random-effects +</text>
+<text class="mut" x="56" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">similarity weights</text>
+<path class="arw" d="M198,244 L218,244" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="stg" x="221" y="192" width="156" height="104" rx="10" fill="#eef4ff" stroke="#9cb8f0" stroke-width="1.2"/>
+<circle class="badge" cx="245" cy="218" r="12" fill="#2f6fdf"/>
+<text class="" x="245" y="222.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text class="txt" x="265" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="start">Plan responses</text>
+<text class="mut" x="237" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Responding genes,</text>
+<text class="mut" x="237" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">directions, sizes</text>
+<path class="arw" d="M379,244 L399,244" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="stg" x="402" y="192" width="156" height="104" rx="10" fill="#eef4ff" stroke="#9cb8f0" stroke-width="1.2"/>
+<circle class="badge" cx="426" cy="218" r="12" fill="#2f6fdf"/>
+<text class="" x="426" y="222.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text class="txt" x="446" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="start">Residual model</text>
+<text class="mut" x="418" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Low-rank ridge/SVD</text>
+<text class="mut" x="418" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">from control cells</text>
+<path class="arw" d="M560,244 L580,244" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="stg" x="583" y="192" width="156" height="104" rx="10" fill="#eef4ff" stroke="#9cb8f0" stroke-width="1.2"/>
+<circle class="badge" cx="607" cy="218" r="12" fill="#2f6fdf"/>
+<text class="" x="607" y="222.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text class="txt" x="627" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="start">Design counts</text>
+<text class="mut" x="599" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Integer per-gene</text>
+<text class="mut" x="599" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">totals per target</text>
+<path class="arw" d="M741,244 L761,244" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="stg" x="764" y="192" width="156" height="104" rx="10" fill="#eef4ff" stroke="#9cb8f0" stroke-width="1.2"/>
+<circle class="badge" cx="788" cy="218" r="12" fill="#2f6fdf"/>
+<text class="" x="788" y="222.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text class="txt" x="808" y="223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2328" text-anchor="start">Generate cells</text>
+<text class="mut" x="780" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">N cells per target</text>
+<text class="mut" x="780" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">(default 400)</text>
+<path class="arw" d="M360,316 L360,344" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="gate" x="20" y="346" width="680" height="80" rx="10" fill="#edf8f0" stroke="#7cc394" stroke-width="1.2"/>
+<text class="gtl" x="40" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1a7f37" text-anchor="start">✓  Quality gates</text>
+<text class="mut" x="40" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Gene/target axes · 400-cell blocks · integer counts · call depth · convergence</text>
+<text class="mut" x="40" y="416" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="start">Readout coverage · provenance fingerprints · numerical guards — any failure stops the merge</text>
+<path class="arw" d="M702,386 L738,386" stroke="#8c959f" stroke-width="1.8" fill="none" marker-end="url(#ah)"/>
+<rect class="out" x="740" y="346" width="200" height="80" rx="10" fill="#fff4e5" stroke="#f0a243" stroke-width="1.2"/>
+<text class="otl" x="840" y="381" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#9a5200" text-anchor="middle">prediction.h5ad</text>
+<text class="mut" x="840" y="403" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#59636e" text-anchor="middle">Merged synthetic cells</text>
+</svg>
